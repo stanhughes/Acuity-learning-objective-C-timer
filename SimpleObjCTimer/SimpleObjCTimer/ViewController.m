@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *timerTester;
+
 @end
 
 @implementation ViewController
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _timerTester.text = @"About to start timmer";
+    
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(onTick:)invocation:<#(nonnull NSInvocation *)#> repeats:<#(BOOL)#>]
 }
 
 - (void)didReceiveMemoryWarning {
